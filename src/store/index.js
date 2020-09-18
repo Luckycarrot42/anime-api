@@ -71,5 +71,5 @@ export default new Vuex.Store({
     selected: (state) => {
         return state.selectedItem;
     }
-}
+  }
 })
