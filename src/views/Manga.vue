@@ -21,6 +21,16 @@
           <v-card class="mx-auto">
             <v-img :src="manga.image_url" height="250px"></v-img>
             <v-card-title>{{ manga.title }}</v-card-title>
+            <v-rating class="pl-2"
+              :value="manga.score"
+              :length="length"
+              color="amber"
+              dense
+              half-increments
+              readonly
+              size="14"
+            ></v-rating>
+            <div class="grey--text ml-4 pl-2">{{ manga.score }}</div>
             <v-card-subtitle>{{ manga.synopsis }}</v-card-subtitle>
             <v-card-actions>
               <v-btn color="info" text>Ver detalles</v-btn>
@@ -39,7 +49,8 @@ import {mapState, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      selectedGenre: {} //recibe objeto seleccionado
+      selectedGenre: {}, //recibe objeto seleccionado,
+      length:10
     }
   },
   created() {
